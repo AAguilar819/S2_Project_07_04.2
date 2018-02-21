@@ -57,11 +57,9 @@ function verifyCrops() {
     try {
         for (var i = 0; i < 7; i++) {
             if (cropsFieldset.getElementsByTagName("input")[i].checked) {
-                console.log("Index is at " + i);
                 cropsComplete = true;
                 messageElement.innerHTML = ""; // clear previous message or recommendation
                 testFormCompleteness();
-                console.log("The box is checked");
             }
         }
         if (!(cropsComplete)) {
@@ -72,9 +70,9 @@ function verifyCrops() {
         messageHeadElement.innerHTML = ""; // remove any former recommendation heading
         messageElement.innerHTML = message; // display error
         message;
-        console.log("No box is checked");
     }
     testFormCompleteness();
+    cropsComplete = false;
 }
 
 /* verify months text box entry is between 1 and 12 */
